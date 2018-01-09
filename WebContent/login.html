@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/day14_cookie_session/loginCheck" method="post">
+		<table align="center" border="1px" cellpadding="0px" cellspacing="0px"
+			width="80%">
+			<tr>
+				<td width="50%" align="center">用户名</td>
+				<td width="50%" align="center"><input type="text"
+					name="username" width="50%">
+			</tr>
+			<tr>
+				<td width="50%" align="center">密码</td>
+				<td width="50%" align="center"><input type="password"
+					name="password" width="50%">
+			</tr>
+			<tr>
+				<td width="50%" align="center">验证码</td>
+				<td width="50%" align="center">
+				<input type="text" name="checkcode" width="50%"> <img
+					src="/day14_cookie_session/checkImgServlet" onclick="changeImg(this)"
+					width="50%" /></td>
+			</tr>
+			<tr width="100%">
+				<td width="50%" align="middle"><input type="submit" value="提交" />
+
+				</td>
+				<td width="50%" align="middle"><input type="reset" value="重置" />
+				</td>				
+			</tr>
+		</table>
+	</form>
+</body>
+<script>
+	function changeImg(obj) {
+		obj.src = "/day14_cookie_session/checkImgServlet?time="
+				+ new Date().getTime();
+	}
+</script>
+</html>
